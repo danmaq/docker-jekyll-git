@@ -4,6 +4,11 @@ VERSION=latest
 build:
 	docker build -t $(NAME):$(VERSION) .
 
+start:
+	docker run -itd \
+		--name $(NAME) \
+		$(NAME):$(VERSION) ash
+
 restart:
 	stop start
 
@@ -26,4 +31,3 @@ sh:
 
 logs:
 	docker logs $(NAME)
-
