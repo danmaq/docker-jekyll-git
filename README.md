@@ -10,6 +10,7 @@ You can connect to GitHub quickly via SSH.
 
 $ mkdir _site
 $ docker run -it --rm -v `pwd`/_site:/srv/jekyll/_site \
+    -v ${HOME}/.ssh/id_rsa:/root/.ssh/id_rsa:ro \
     -e GIT_NAME='Your Name' -e GIT_EMAIL='your@email.com' \
     danmaq/jekyll-git-redcarpet ash
 /srv/jekyll # cd /tmp
